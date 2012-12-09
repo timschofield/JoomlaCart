@@ -1,0 +1,26 @@
+td.none  {
+    background: url(/cms/components/com_cartweberp/images/CheckOutsmall.png) 134px 32px no-repeat;
+}
+td.catalog  {
+	text-align:center;	
+}
+div.catalog  {
+	text-align:center;	
+	width: 175px;	
+	height: 200px;
+}
+
+    * #tooltip1 { position: relative; }
+    * #tooltip1 a span { display: none; color: #FFFFFF; }
+    * #tooltip1 a:hover span { display: block; position: absolute; width: 100px; background-color: #60605e; height: 50px;  top: 20px; color: #FFFFFF; padding: 5px; }
+
+    * #tooltip2 { position: relative; }
+    * #tooltip2 a span { display: none; color: #FFFFFF; }
+    * #tooltip2 a:hover span { display: block; position: absolute; width: 300px; background-color: #60605e; height: 100px;  top: -90px; right: -300; color: #FFFFFF; padding: 5px; }
+    * #tooltip3 { position: relative; }
+    * #tooltip3 a span { display: none; color: #FFFFFF; }
+    * #tooltip3 a:hover span { display: block; position: absolute; width: 300px; background-color: #60605e; height: 100px;  top: -90px; right: -300; color: #FFFFFF; padding: 5px; }
+
+span.tooltip4{
+	width: 160px;
+}

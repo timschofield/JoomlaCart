@@ -1,0 +1,21 @@
+/**
+ * @version SVN: $Id: lang_orderdefault.css 18 2010-11-08 01:10:19Z elkuku $
+ * @package		EasyCreator
+ * @subpackage	CSS
+ * @author		Nikolai Plath (elkuku) {@link http://www.nik-it.de NiK-IT.de}
+ * @author		Created on 20-Dec-2007
+ */
+ @CHARSET "UTF-8";
+
+li.handle {
+	cursor: move;
+}
+
+li.handle:hover {
+	background-color: yellow;
+}
+
+.ecr_code {
+	border: 1px dotted grey;
+	background-color: #F2F2FF;
+}

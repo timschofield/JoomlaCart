@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+<fieldset 	name="database"
+				label="DATABASE_CONNECTION_SETTINGS"
+				description="DATABASE_CONNECTION_SETTING_DESCRIPTION">
+	<field name="host" type="text" default="localhost" label="Host" description="Enter the host name for webERP database.">
+	</field>
+	<field name="database" type="text" default="" label="Database" description="Enter the data base name for webERP.">
+	</field>
+	<field name="databaseuser" type="text" default="" label="DatabaseUser" description="Enter the user name to access the database." >
+	</field>
+	<field name="userpassword" type="password" default="" label="UserPassword" description="Enter the password for this user to access the database." >
+	</field>
+	</fieldset>
+<fieldset 	name="pictures"
+				label="PATH_TO_PICTURES"
+				description="PATH_TO_PICTURES_AND_BROCHURES">
+	<field name="pathtopics" type="text" default="" size="100" label="PathToPictures" description="Enter the path where weberp picutres are stored." >
+	</field>
+	<field name="pathtopdfs" type="text" default="" size="100" label="PathToPDFs" description="Enter the path where weberp pdfs are stored.(Part Brochure)" >
+	</field>
+	</fieldset>
+<fieldset 	name="Include Stock and Customer Types"
+				label="STOCK_PARAMETERS_AND_CUSTOMER_TYPES"
+				description="DESCRIPTION_OF_STOCK_AND_CUSTOMER_TYPES">
+	<field name="includesalescategories" type="text" default="" label="IncludeSalesCategories" description="Enter Sales Categories to be included separated by commas. Leave blank for all." >
+	</field>
+	<field name="includelocations" type="text" default="" label="IncludeLocations" description="If you want to restrict the catalog to on hand stock in certain locations, enter the ones to be included separated by commas. Leave blank if you want all stock - on hand or not. On hand stock in locations not included will not be displayed" >
+	</field>
+	<field name="allowedterms" type="text" default="" label="AllowedTerms" description="Enter allowed A/R Terms separated by commas." >
+	</field>
+	<field name="dontselltypes" type="text" default="" label="DontSellTypes" description="Enter part types to exclude separated by commas." >
+	</field>
+	</fieldset>
+<fieldset 	name="Company Settings"
+				label="COMPANY_SETTINGS"
+				description="DESCRIPTION_OF_COMPANY_SETTINGS">
+	<field name="bankaccount" type="text" default="" label="Bank Account" description="Enter Bank Account." >
+	</field>
+	<field name="currencycode" type="text" default="" label="Curency Code" description="Enter Curency Code." >
+	</field>
+	<field name="listsalestype" type="text" default="" label="Sales Type Code for List Price" description="Sales Type Code for List Price" >
+	</field>
+	<field name="sendemail" type="radio" default="1" label="Send Email" description="Send Email for new registrations and order confirmation">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>	
+	<field name="fromemail" type="text" default="" label="Email sent from" description="Outbound emails will be from" >
+	</field>	
+	<field name="debug" type="radio" default="0" label="Show Diagnostic Error information from sale" description="Log in as admin on the front side and display the catalog.  Any sql statements that do not return data are listed with possible solutions or a reason why it is OK. Show Gateway and database query information from sale">
+  		<option value="1">On</option>
+  		<option value="0">Off</option>
+	</field>
+	</fieldset>
+<fieldset 	name="PayPal Gateway"
+				label="PAYPAL_GATEWAY"
+				description="DESCRIPTION_OF_PAYPAL_GATEWAY">
+	<field name="paypalname" type="text" default="" label="Paypal Name" description="Enter Paypal Name." >
+	</field>
+	<field name="paypalpassword" type="text" default="" label="Paypal Password" description="Enter Paypal Password." >
+	</field>
+	<field name="paypalsignature" type="text" default="" size="100" label="Paypal Signature" description="Enter Paypal Signature." >
+	</field>
+	<field name="sandboxname" type="text" default="" size="100" label="Paypal Name for Sandbox" description="Enter Paypal Name for Sandbox." >
+	</field>
+	<field name="sandboxpassword" type="text" default="" size="100" label="Paypal Password for Sandbox" description="Enter Paypal Password for Sandbox." >
+	</field>
+	<field name="sandboxsignature" type="text" default="" size="100" label="Paypal Signature for Sandbox" description="Paypal Signature for Sandbox." >
+	</field>
+	<field name="environment" type="radio" default="1" label="Choose between live and sandbox for Paypal" description="Choose between live and sandbox for Paypal">
+  		<option value="1">live</option>
+  		<option value="0">sandbox</option>
+	</field>
+	
+	</fieldset>
+<fieldset 	name="Google Gateway"
+				label="GOOGLE_GATEWAY"
+				description="DESCRIPTION_OF_GOOGLE_GATEWAY">
+	<field name="googlemerchantid" type="text" default="" label="Google Merchant ID" description="Enter Google Merchant ID." >
+	</field>
+	<field name="googlekey" type="text" default="" label="Google Key" description="Enter Google Key." >
+	</field>
+	<field name="googlesandboxmerchantid" type="text" default="" label="Google Merchant ID for Sandbox" description="Enter Google Merchant ID for Sandbox." >
+	</field>
+	<field name="googlesandboxkey" type="text" default="" label="Google Key for Sandbox" description="Enter Google Key for Sandbox." >
+	</field>
+	<field name="googlecheckout" type="radio" default="1" label="Choose between live and sandbox for Google Checkout" description="Choose between live and sandbox for GoogleCheckout">
+  		<option value="1">live</option>
+  		<option value="0">sandbox</option>
+	</field>
+	</fieldset>
+<fieldset 	name="Authorize Net Gateway"
+				label="AUTHORIZE_NET_GATEWAY"
+				description="DESCRIPTION_OF_AUTHORIZE_NET_GATEWAY">
+	<field name="authorizenettesttransactionkey" type="text" default="" label="Authorize Net Test Transaction Key" description="Enter Authorize Net Test Transaction Key." >
+	</field>
+	<field name="authorizenettestapiloginid" type="text" default="" label="Authorize Net Test API Log In ID " description="Authorize Net Test API Log In ID." >
+	</field>
+	<field name="authorizenetapiloginid" type="text" default="" label="Authorize Net API Log In ID " description="Authorize Net API Log In ID." >
+	</field>
+	<field name="authorizenettransactionkey" type="text" default="" label="Authorize Net Transaction Key" description="Enter Authorize Net Transaction Key." >
+	</field>
+	<field name="authorizenet" type="radio" default="1" label="Choose between live and test for Authorize.net" description="Choose between live and test for Authorize.net." >
+  		<option value="1">Live</option>
+  		<option value="0">Test</option>
+	</field>	
+	</fieldset>
+<fieldset 	name="New Customer Defaults"
+				label="NEW_CUSTOMER_DEFAULTS"
+				description="DESCRIPTION_OF_DEFAULTS_TO_CREATE_NEW_CUSTOMERS">
+	<field name="salesmancode" type="text" default="" label="Default Salesman Code" description="Default Salesman Code" >
+	</field>
+	<field name="areas" type="text" default="" label="Default Area Code" description="Default Area Code" >
+	</field>
+	<field name="paymentterms" type="text" default="" label="Default Payment Terms" description="Default Payment Terms" >
+	</field>
+	<field name="salestype" type="text" default="" label="Sales Type - Default Price List" description="Sales Type - Default Price List" >
+	</field>
+	<field name="usertype" type="text" default="" label="Default User Type" description="Default User Type" >
+	</field>
+	<field name="gid" type="text" default="" label="gid - Default User Group" description="gid - Default User Group gid - Registered User Group = 18" >
+	</field>
+	<field name="locationcode" type="text" default="" label="Default Location Code" description="Default Location Code" >
+	</field>
+	<field name="taxgroupid" type="text" default="" label="Default Tax Group ID" description="Default Tax Group ID" >
+	</field>
+	</fieldset>
+<fieldset 	name="Catalog Display Parameters"
+				label="CATALOG_DISPLAY_PARAMETERS"
+				description="DESCRIPTION_OF_CATALOG_DISPLAY_PARAMETERS">
+	<field name="priceheadingoverride" type="text" default="" label="Price Heading Override" description="If you want the column heading to say something other than Price." >
+	</field>
+	<field name="displaycolumns" type="radio" default="2" label="Display 1 or 2 columns of product" description="Display one or two columns of product in catalog">
+  		<option value="1">One</option>
+  		<option value="2">Two</option>
+	</field>
+	<field name="coresales" type="radio" default="0" label="Add a column to all sales data for cores sales and net out price" description="If your products have a core that is returned for credit then Yes">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="adjustquantity" type="radio" default="0" label="Adjust quantity to on hand quantity if insufficient" description="Adjust quantity to on hand quantity if insufficient">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="showquantityonhandcolumn" type="radio" default="1" label="Show Quantity on Hand Column" description="Show Quanitiy on hand collumn on catalog">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="showquantityonhand" type="radio" default="1" label="Show Quantity on Hand otherwise show Yes/No" description="Show Quanitiy Or Yes - No">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="price0" type="radio" default="1" label="Choose to include items with a 0 price" description="Choose to include items with a 0 price">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="pricecolumn" type="radio" default="1" label="Show Price Column" description="Say no to hide price column">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>
+	<field name="catalogonly" type="radio" default="0" label="Catalog Only" description="Show catalog only - no purchasing allowed">
+  		<option value="1">Yes</option>
+  		<option value="0">No</option>
+	</field>	
+</fieldset>
+<fieldset 	name="Year Make and Model Parameters"
+				label="YEAR_MAKE_AND_MODEL_PARAMETERS"
+				description="DESCRIPTION_OF_YEAR_MAKE_AND_MODEL_PARAMETERS">
+	<field name="radio" type="radio" default="1" label="Choose between radio and drop down selection types" description="Choose between radio and drop down selection types">
+  		<option value="1">radio</option>
+  		<option value="0">drop down</option>
+	</field>
+
+</fieldset>
+</config>

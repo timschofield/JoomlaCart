@@ -1,0 +1,85 @@
+<?php
+/**
+* @package CARTwebERP
+* @Joomla version 1.6
+* @copyright Copyright (C) 2011 Mo Kelly. All rights reserved.
+   
+*	This program is free software: you can redistribute it and/or modify    
+*	it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  (at your option) any later version.*
+*
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.*
+
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+defined( '_JEXEC' ) or die( 'Restricted access' );
+global $mainframe;	
+require_once( JPATH_COMPONENT . DS . 'models' .DS.'helper.php' );
+jimport( 'joomla.application.component.controller' );
+class CartweberpControllercart extends JController
+{
+	function __construct( $default = array())
+	{
+		parent::__construct( $default );
+	}
+	function display()
+	{
+		$app    =& JFactory::getApplication();
+		$router =& $app->getRouter();
+		$router->setVar( 'view', 'cart' );
+		$router->setVar( 'model', 'cart' );
+		JRequest::setVar( 'view', 'cart' );
+		JRequest::setVar( 'layout', 'default'  );
+		parent::display();
+	}
+	function updatecart(){	
+		global $mainframe;	
+		$mainframe = JFactory::getApplication();
+		$post	= JRequest::get('post');
+		If(isset($post["freightselected"])){
+			$mainframe->setUserState( "FreightSelected",$post["freightselected"]) ;
+		}else{
+			$mainframe->setUserState( "FreightSelected",'') ;
+		}
+		If(isset($post["branch"]) AND $post["branch"] <> "" ){
+			$mainframe->setUserState( "branch",$post["branch"]) ;
+		}
+		foreach($post['QuantityOrdered'] as $Part=>$Quantity){
+			$QuantityOrdered[$Part] = (integer)$Quantity;
+		}
+		foreach($post['Price'] as $Part=>$Amount){
+			$Price[$Part] = $Amount;
+		}
+		$this->_table_prefix = '#__cart_';			
+		$db = &JFactory::getDBO();
+		$result='';
+		foreach($post['ID'] as $Part=>$ID){
+			If($QuantityOrdered[$Part] == 0){
+				$db->setQuery( "DELETE FROM " . $this->_table_prefix . "orders WHERE id = " . $ID  );	                 
+				$db->query();				
+			}else{					
+				$db->setQuery( "UPDATE " . $this->_table_prefix . "orders  
+				                   SET quantityordered = " . $QuantityOrdered[$Part] . ",
+				                   	  price				= " . $Price[$Part] 				. " 
+				                 WHERE id = " . $ID  );	                 
+				$db->query();
+			}		
+		}
+		parent::display();
+	}
+	function remove(){
+		$model = $this->getModel('cart');
+		$this->_table_prefix = '#__cart_';
+		$HardwareAddress = modwebERPHelper::_getCartID();
+		$db = &JFactory::getDBO();
+		$db->setQuery( "DELETE FROM " . $this->_table_prefix . "orders WHERE hardwareaddress = '" . $HardwareAddress . "'" );	                 
+		$db->query();
+		header("Location: ". JURI::base().'index.php?option=com_cartweberp&controller=cartcatalog&view=cartcatalog');
+	}
+}	
+?>

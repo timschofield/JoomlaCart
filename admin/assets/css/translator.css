@@ -1,0 +1,11 @@
+/**
+ * @version SVN: $Id: translator.css 18 2010-11-08 01:10:19Z elkuku $
+ * @package     EasyCreator
+ * @subpackage  CSS
+ * @author      Nikolai Plath (elkuku) {@link http://www.nik-it.de NiK-IT.de}
+ * @author      Created on 28-Sep-2009
+ */
+div#google_loader {
+   color: red;
+   font-size: 2em;
+}

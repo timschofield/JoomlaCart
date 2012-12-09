@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6" method="upgrade">
+  <name>CARTwebERP</name>
+  <creationDate>13-Mar-2012</creationDate>
+  <author>Mo Kelly</author>
+  <authorEmail>mo@joomlamo.com</authorEmail>
+  <authorUrl>http://joomlamo.com</authorUrl>
+  <copyright>(C) 2008-2011 All rights reserved.</copyright>
+  <license>GPL</license>
+  <version>2.5</version>
+  <description>Joomla Shopping Cart Bridge with webERP</description>
+  <scriptfile/>
+  <install>
+    <sql>
+      <file driver="" charset="utf8">install.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+      <file driver="" charset="utf8">uninstall.sql</file>
+    </sql>
+  </uninstall>
+  <update>
+    <schemas/>
+  </update>
+  <installfile>install/install.cartweberp.php</installfile>
+  <files folder="site">
+    <folder>assets</folder>
+    <folder>controllers</folder>
+    <folder>images</folder>
+    <folder>language</folder>
+    <folder>models</folder>
+    <folder>tables</folder>
+    <folder>views</folder>
+    <filename>cartweberp.php</filename>
+    <filename>index.html</filename>
+    <filename>readme.txt</filename>
+  </files>
+  <administration>
+    <menu img="components/com_cartweberp/assets/images/ico/icon-16-cartweberp.png">CARTwebERP</menu>
+    <files folder="admin">
+      <folder>assets</folder>
+      <folder>controllers</folder>
+      <folder>help</folder>
+      <folder>images</folder>
+      <folder>install</folder>
+      <folder>language</folder>
+      <folder>models</folder>
+      <folder>tables</folder>
+      <folder>views</folder>
+      <filename>admin.cartweberp.php</filename>
+      <filename>config.xml</filename>
+      <filename>index.html</filename>
+      <filename>install.sql</filename>
+      <filename>uninstall.sql</filename>
+      <filename>zip.sql</filename>
+    </files>
+  </administration>
+</extension>
