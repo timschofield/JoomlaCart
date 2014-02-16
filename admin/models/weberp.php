@@ -272,7 +272,7 @@ class modCARTwebERPHelper extends JModel {
 			}
 		}
 	}
-	function getRowList($query, $database, $errorMessage, $index = NULL, $publicMessage = 1) {
+	static function getRowList($query, $database, $errorMessage, $index = NULL, $publicMessage = 1) {
 		global $weberp;
 
 		$UserType = JFactory::getUser()->groups["Super Users"];
