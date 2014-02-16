@@ -12,12 +12,12 @@
   <scriptfile/>
   <install>
     <sql>
-      <file driver="" charset="utf8">install.sql</file>
+      <file driver="mysqli" charset="utf8">install.sql</file>
     </sql>
   </install>
   <uninstall>
     <sql>
-      <file driver="" charset="utf8">uninstall.sql</file>
+      <file driver="mysqli" charset="utf8">uninstall.sql</file>
     </sql>
   </uninstall>
   <update>
