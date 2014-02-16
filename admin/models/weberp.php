@@ -210,7 +210,7 @@ class modCARTwebERPHelper extends JModel {
 			}
 		}
 	}
-	function getCollumnArray($query, $database, $errorMessage, $publicMessage = 1) {
+	static function getCollumnArray($query, $database, $errorMessage, $publicMessage = 1) {
 		global $weberp;
 		$UserType = JFactory::getUser()->groups[8];
 		$error = array();
